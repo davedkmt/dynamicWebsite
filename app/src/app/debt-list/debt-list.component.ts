@@ -14,7 +14,7 @@ export class DebtListComponent implements OnInit {
   public errorMsg: string;
   public successMsg: string;
   public debts: Debt[];
-  public columns = ['appointmentDate', 'name', 'email', 'cancel'];
+  public columns = ['debtValue', 'interestRate', 'minimumPayment', 'cancel'];
 
   constructor(private debtService: DebtsService) { }
 
@@ -30,14 +30,14 @@ export class DebtListComponent implements OnInit {
         });
   }
 
-  cancelDebts(id: string) {
+  cancelDebt(id: string) {
     this.debtService.cancelDebt(id)
       .pipe(
         mergeMap(() => this.debtService.getDebts())
       )
       .subscribe((debts: Debt[]) => {
         this.debts = debts;
-        this.successMsg = 'Successfully cancelled appointment';
+        this.successMsg = 'Successfully deleted debt';
       },
         (error: ErrorEvent) => {
           this.errorMsg = error.error.message;

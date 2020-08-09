@@ -1,3 +1,20 @@
-<p>
-  debt works!
-</p>
+<mat-spinner *ngIf="loading"></mat-spinner>
+<mat-toolbar *ngIf="successMsg" color="accent">{{ successMsg }}</mat-toolbar>
+<mat-toolbar *ngIf="errorMsg" color="warn">{{ errorMsg }}</mat-toolbar>
+<div class="form-container">
+
+  <form (submit)="createDebt()">
+    <mat-form-field>
+      <input [(ngModel)]="debtValue" name="debtValue" matInput placeholder="Debt" required>
+    </mat-form-field><br />
+    <mat-form-field>
+      <input [(ngModel)]="interestRate" name="interestRate" matInput placeholder="Interesst Rate" required>
+    </mat-form-field><br />
+    <mat-form-field>
+      <input [(ngModel)]="minimumPayment" name="minimumPayment" matInput placeholder="Minuimum Payment" required>
+    </mat-form-field><br />
+    <button mat-raised-button color="primary">Add Debt</button>
+  </form>
+  <br />
+  <p>* Required Fields</p>
+</div>
