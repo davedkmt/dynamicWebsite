@@ -9,7 +9,7 @@ import { Debt } from './debts-model';
 })
 export class DebtsService {
 
-  private BASE_URL = environment.API_URL;
+    private BASE_URL = 'users'
 
   constructor(private http: HttpClient) { }
 
