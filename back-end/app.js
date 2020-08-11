@@ -14,10 +14,10 @@ var usersRouter = require('./routes/users');
 var app = express();
 
 //Connect to the Database
+//mongodb+srv://cluster0.nhpp3.mongodb.net/debt-app
 //process.env.MONGODB_URI
-//`mongodb://${config.dbHost}`
 
-MongoClient.connect("mongodb+srv://cluster0.nhpp3.mongodb.net/debt-app", {
+MongoClient.connect( process.env.MONGODB_URI || `mongodb://${config.dbHost}`, {
     useNewUrlParser: true, useUnifiedTopology: true
 }).then(client => {
     const db = client.db(config.dbName);
