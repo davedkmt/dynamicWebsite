@@ -21,7 +21,7 @@
 
 
 
-<div *ngIf="!loading && !error">
+<div *ngIf="!loading">
   <table mat-table [dataSource]="debts" class="mat-elevation-z8">
     <ng-container matColumnDef="debtValue">
       <th mat-header-cell *matHeaderCellDef> Debt </th>
