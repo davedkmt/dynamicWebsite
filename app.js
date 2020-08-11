@@ -17,7 +17,7 @@ var app = express();
 //mongodb+srv://cluster0.nhpp3.mongodb.net/debt-app
 //process.env.MONGODB_URI
 
-MongoClient.connect( process.env.MONGODB_URI || `mongodb://${config.dbHost}`, {
+MongoClient.connect( 'mongodb://debts:debts7@ds259079.mlab.com:59079/heroku_lb9csk6h', {
     useNewUrlParser: true, useUnifiedTopology: true
 }).then(client => {
     const db = client.db(config.dbName);
