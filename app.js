@@ -14,7 +14,7 @@ var usersRouter = require('./routes/users');
 var app = express();
 
 //Connect to the Database
-MongoClient.connect(process.env.MONGODB_URI || `mongodb://${config.dbHost}`, {
+MongoClient.connect(process.env.PORT || `mongodb://${config.dbHost}`, {
     useNewUrlParser: true, useUnifiedTopology: true
 }).then(client => {
     const db = client.db(config.dbName);
