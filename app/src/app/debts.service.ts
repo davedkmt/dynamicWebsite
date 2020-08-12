@@ -9,7 +9,7 @@ import { Debt } from './debts-model';
 })
 export class DebtsService {
 
-    private BASE_URL = 'users'
+    private BASE_URL = 'http://localhost:3000'
 
   constructor(private http: HttpClient) { }
 
@@ -17,7 +17,7 @@ export class DebtsService {
     return this.http.get<Debt[]>(`${this.BASE_URL}/debts`);
   }
 
-  createDebt(debtValue: string, interestRate: string, minimumPayment: string): Observable<Debt> {
+  createDebt(debtValue: number, interestRate: number, minimumPayment: number): Observable<Debt> {
     return this.http.post<Debt>(`${this.BASE_URL}/debts`, { debtValue, interestRate, minimumPayment });
   }
 
