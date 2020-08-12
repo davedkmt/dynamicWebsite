@@ -1,0 +1,17 @@
+.container {
+    width: 95%;
+    margin: 30px auto 0 auto;
+    text-align: center;
+    text-align: center;
+    font-family: Arial;
+    font-size: 16px;
+}
+
+
+
+.header {
+    background-color: #f1f1f1;
+    padding: 20px;
+    text-align: center;
+    font-weight: bold;
+}
