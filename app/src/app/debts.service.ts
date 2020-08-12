@@ -9,7 +9,7 @@ import { Debt } from './debts-model';
 })
 export class DebtsService {
 
-    private BASE_URL = 'http://localhost:80'
+    private BASE_URL = 'http://localhost:3000'
 
   constructor(private http: HttpClient) { }
 
