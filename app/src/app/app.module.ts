@@ -14,15 +14,11 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { HomeComponent } from './home/home.component';
-import { DebtComponent } from './debt/debt.component';
-import { DebtListComponent } from './debt-list/debt-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    DebtComponent,
-    DebtListComponent
+    HomeComponent
   ],
   imports: [
     BrowserModule,
