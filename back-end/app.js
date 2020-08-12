@@ -16,8 +16,9 @@ var app = express();
 //Connect to the Database
 //mongodb+srv://cluster0.nhpp3.mongodb.net/debt-app
 //process.env.MONGODB_URI
+const uri = "mongodb+srv://debt:debt@cluster0.1ocms.mongodb.net/debt-app?retryWrites=true&w=majority";
 
-MongoClient.connect( process.env.MONGODB_URI || `mongodb://${config.dbHost}`, {
+MongoClient.connect( uri, {
     useNewUrlParser: true, useUnifiedTopology: true
 }).then(client => {
     const db = client.db(config.dbName);
